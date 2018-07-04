@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <p>&nbsp;</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= image_tag("invite.jpg", class: 'img-fluid') %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p>&nbsp;</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p>Please enter the number of guests attending each event below.</p>
+    </div>
+  </div>
+  <%= form_tag do %>
+  <%= hidden_field_tag(:email, @email) %>
+  <div class="row">
+    <div class="col">
+      <%= label_tag(:service, "Service and lunch at Beth El:") %>
+    </div>
+    <div class="col">
+      <%= text_field_tag(:service, @service, size: 2) %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= label_tag(:party, "Party:") %>
+    </div>
+    <div class="col">
+      <%= text_field_tag(:party, @party, size: 2) %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p>&nbsp;</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <%= submit_tag(@commit ? "Update" : "RSVP", hidden: false) %>
+    </div>
+  </div>
+  <% end %>
+  <div class="row">
+    <div class="col">
+      <% if @commit %>
+      <p>Thanks for your response. You may change the numbers above if you've made any mistakes.</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p>&nbsp;</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Congregation%20Beth%20El%2C%201301%20Oxford%20St%2C%20Berkeley%2C%20CA%2094709&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
