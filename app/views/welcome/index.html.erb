@@ -1,7 +1,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col">
+      <% if @commit %>
+      <p>Thanks for your response. You may change the numbers below if you've made any mistakes.</p>
+      <% else %>
       <p>&nbsp;</p>
+      <% end %>
     </div>
   </div>
   <div class="row">
@@ -55,7 +59,7 @@
       <% if @commit %>
       <p>Thanks for your response. You may change the numbers above if you've made any mistakes.</p>
       <% else %>
-      <p><%= @decrypted_email %></p>
+      <p>&nbsp;</p>
       <% end %>
     </div>
   </div>
