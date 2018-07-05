@@ -26,7 +26,7 @@
       <%= label_tag(:service, "Service and lunch at Beth El:") %>
     </div>
     <div class="col">
-      <%= text_field_tag(:service, @service, size: 2) %>
+      <input name="service" value="<%= @service %>" type="number" min="1" max="7" step="1" />
     </div>
   </div>
   <div class="row">
@@ -34,7 +34,7 @@
       <%= label_tag(:party, "Party:") %>
     </div>
     <div class="col">
-      <%= text_field_tag(:party, @party, size: 2) %>
+      <input name="party" value="<%= @party %>" type="number" min="1" max="7" step="1" />
     </div>
   </div>
   <div class="row">
@@ -54,6 +54,8 @@
     <div class="col">
       <% if @commit %>
       <p>Thanks for your response. You may change the numbers above if you've made any mistakes.</p>
+      <% else %>
+      <p><%= @decrypted_email %></p>
       <% end %>
     </div>
   </div>
